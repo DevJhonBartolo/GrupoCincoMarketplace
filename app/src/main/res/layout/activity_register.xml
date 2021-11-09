@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".RegisterActivity">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Nombres" />
+
+    <EditText
+        android:id="@+id/txtNombres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10dp"
+        android:inputType="textPersonName"
+        android:hint="ej: Pepito"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apellidos" />
+
+    <EditText
+        android:id="@+id/txtApellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_margin="10dp"
+        android:hint="ej:Vargas Gomez"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Correo Electrónico" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10dp"
+        android:hint="ej: jhon@dominio.com"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contraseña" />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10dp"
+        android:hint="Ingrese Contraseña"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Telefono" />
+
+    <EditText
+        android:id="@+id/txtTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10dp"
+        android:hint="ej: 3127431066"
+        android:inputType="phone" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aceptar la politica de declaración de privacidad" />
+
+    <Button
+        android:id="@+id/BtnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:onClick="register"/>
+
+</LinearLayout>
