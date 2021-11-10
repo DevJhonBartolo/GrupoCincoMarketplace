@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
         txtPassword=findViewById(R.id.txtPassword)
         progressBar=findViewById(R.id.progressBar)
         auth= FirebaseAuth.getInstance()
+
     }
     fun forgotPassword(view: View){
         startActivity(Intent(this,ForgotPasswordActivity::class.java))
