@@ -44,7 +44,63 @@ class RegisterActivity : AppCompatActivity() {
 
 
     fun register(view: View) {
-        createNewAccount()
+        validate()
+        //createNewAccount()
+
+    }
+
+    private fun validate(){
+        val nombres:String=txtNombres.text.toString()
+        val apellidos:String=txtApellidos.text.toString()
+        val email:String=txtEmail.text.toString()
+        val contrasena:String=txtPassword.text.toString()
+        val telefono:String=txtTelefono.text.toString()
+
+        //VALIDAR NOMBRES
+        if(Pattern.compile("^[a-zA-Z ]+$").matcher(nombres).find()){
+            txtNombres.setError(null)
+
+        }
+        else{
+            txtNombres.setError("El nombre solo puede contener letras...")
+
+        }
+
+        //VALIDAR APELLIDOS
+        if(Pattern.compile("^[a-zA-Z ]+$").matcher(apellidos).find()){
+            txtApellidos.setError(null)
+        }
+        else{
+            txtApellidos.setError("El apellido solo puede contener letras...")
+        }
+
+        //VALIDAR EMAIL
+        if(email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            txtEmail.setError("El Correo es inválido..")
+            return
+        }
+        else{
+            txtEmail.setError(null)
+        }
+
+        //VALIDAR PASSWORD
+        if (contrasena.isEmpty() || contrasena.length<8){
+            txtPassword.setError("Se necesitan mas de 8 caracteres")
+
+        }
+        else if(!Pattern.compile("[0-9]").matcher(contrasena).find()){
+            txtPassword.setError("Se requiere un numero")
+
+            }
+        else if(!Pattern.compile("[A-Z]").matcher(contrasena).find()){
+            txtPassword.setError("Se requieren letras Mayúsculas")
+
+        }
+
+        else {
+            txtPassword.setError(null)
+            createNewAccount()
+        }
 
     }
 
@@ -57,11 +113,6 @@ class RegisterActivity : AppCompatActivity() {
 
         if(!TextUtils.isEmpty(nombres) && !TextUtils.isEmpty(apellidos) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(contrasena) && !TextUtils.isEmpty(telefono)){
 
-            if(Patterns.EMAIL_ADDRESS.matcher(txtEmail.text.toString()).matches()==false) {
-                Toast.makeText(this, "grave!!", Toast.LENGTH_LONG).show()
-            }
-            else
-            {
                 auth.createUserWithEmailAndPassword(email,contrasena).addOnCompleteListener(this){
                     task->
 
@@ -78,7 +129,7 @@ class RegisterActivity : AppCompatActivity() {
                         action()
                     }
                 }
-            }
+
         }
         else
         {
