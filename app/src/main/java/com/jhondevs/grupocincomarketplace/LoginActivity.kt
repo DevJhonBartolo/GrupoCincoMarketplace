@@ -19,6 +19,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth:FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        title="Login"
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
