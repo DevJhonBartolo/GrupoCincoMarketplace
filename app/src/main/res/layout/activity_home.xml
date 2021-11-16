@@ -37,4 +37,17 @@
         android:background="@android:color/darker_gray"
         android:text="Button" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/COL1"
+        android:text="Button" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/COL1"
+        android:text="Button" />
+
 </LinearLayout>

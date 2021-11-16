@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#303F9F</color>
     <color name="white_700">#FFFFFF</color>
+    <color name="COL1">#2E86C1</color>
+    <color name="COL2">#1D8348</color>
+
+
 </resources>
