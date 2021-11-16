@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:layout_margin="16dp">
+        android:layout_margin="17dp">
 
         <ImageView
             android:id="@+id/photo_image_view"
