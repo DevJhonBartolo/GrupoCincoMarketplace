@@ -37,8 +37,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun register(view: View){
-        //startActivity(Intent(this,RegisterActivity::class.java))
-        startActivity(Intent(this,MainActivity::class.java))
+        startActivity(Intent(this,RegisterActivity::class.java))
+        //startActivity(Intent(this,MainActivity::class.java))
 
     }
     fun login(view: View){

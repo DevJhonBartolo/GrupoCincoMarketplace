@@ -26,7 +26,7 @@
             android:id="@+id/photo_image_view"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:src="@drawable/logop"
+            android:src="@drawable/splashscreen"
            />
 
     </LinearLayout>
@@ -102,23 +102,46 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
-            android:background="@color/blue"
+            android:background="@color/COL1"
             android:onClick="login"
+            android:textColor="@color/white_700"
+            android:textStyle="bold"
             android:text="Iniciar Sesión"
             tools:ignore="InvalidId" />
         <Space
             android:layout_width="match_parent"
             android:layout_height="10dp"/>
 
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Google"
-            android:textColor="@color/black"
-            android:background="@color/white"
-            android:textAlignment="textStart"
-            android:paddingStart="16dp"
-            android:drawableStart="@drawable/google" />
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableStart="@drawable/google"
+                android:paddingStart="16dp"
+                android:text="Google"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableStart="@drawable/facebook"
+                android:paddingStart="16dp"
+                android:text="Facebook"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+
+
+
 
         <Space
             android:layout_width="match_parent"

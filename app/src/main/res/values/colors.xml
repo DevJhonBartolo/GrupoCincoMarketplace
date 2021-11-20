@@ -11,6 +11,7 @@
     <color name="white_700">#FFFFFF</color>
     <color name="COL1">#2E86C1</color>
     <color name="COL2">#1D8348</color>
+    <color name="underline">#1D8348</color>
 
 
 </resources>
