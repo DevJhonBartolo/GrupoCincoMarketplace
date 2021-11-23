@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Usuario"
+            android:text="@string/user"
             android:textSize="27dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
