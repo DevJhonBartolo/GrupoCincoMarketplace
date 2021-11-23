@@ -14,14 +14,21 @@
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/activity_maps.xml" value="0.14130434782608695" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/activity_productos.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/app_bar_home.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/content_home.xml" value="0.271875" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/customborder.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_gallery.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_slideshow.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/nav_header.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/nav_header_home.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/producto_item.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/productos_view.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/tarjeta_productos.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/menu/activity_main_drawer.xml" value="0.271875" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/menu/home.xml" value="0.271875" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/menu/menu_main_activity.xml" value="0.271875" />
-        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/menu/nav_menu.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/menu/nav_menu.xml" value="0.5" />
       </map>
     </option>
   </component>
