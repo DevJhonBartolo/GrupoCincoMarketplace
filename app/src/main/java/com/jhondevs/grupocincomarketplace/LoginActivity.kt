@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
     fun forgotPassword(view: View){
         //startActivity(Intent(this,ForgotPasswordActivity::class.java))
         //startActivity(Intent(this,ListaProductosActivity::class.java))
-        startActivity(Intent(this,ListaProductosActivity::class.java))
+        startActivity(Intent(this,HomeActivity::class.java))
 
     }
 

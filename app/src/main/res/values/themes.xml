@@ -24,9 +24,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.GrupoCincoMarketplace.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.GrupoCincoMarketplace.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
