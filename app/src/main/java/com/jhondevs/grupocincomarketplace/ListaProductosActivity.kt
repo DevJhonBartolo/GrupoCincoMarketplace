@@ -22,7 +22,6 @@ class ListaProductosActivity : AppCompatActivity() {
         productoReciclerview = findViewById(R.id.productoLista)
         productoReciclerview.layoutManager = LinearLayoutManager(this)
         productoReciclerview.setHasFixedSize(true)
-
         productoArraylist = arrayListOf<Producto>()
 
         getProductoData()

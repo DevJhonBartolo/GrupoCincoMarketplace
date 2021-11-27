@@ -6,7 +6,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
-    android:layout_margin="16dp">
+    android:layout_margin="16dp"
+    android:orientation="horizontal"
+    tools:context=".HomeActivity">
 
 
 
@@ -23,41 +25,93 @@
             android:layout_gravity="center_vertical"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="239dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="5dp">
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvdescripcion"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:text="Samsung  Galaxy A22 128 GB"
                 android:textColor="@color/COL1"
-                android:textStyle="bold"
-                android:text="Samsung  Galaxy A22 128 GB"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvprecio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="27dp"
-                android:text="$ 799.000"
-                android:textColor="@color/COL2"
-                android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/tvcantidadx"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="Cantidad: "/>
-            <TextView
-                android:id="@+id/tvcantidad"
-                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvpreciox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Precio $"
+                    android:textColor="@color/COL2"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvprecio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$ 799.000"
+                    android:textColor="@color/COL2"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="$ 799.000"/>
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvcantidadX"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cantidad: "
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvcantidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$ 799.000"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tvcategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Categoria"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvvendedor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="vendedor"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
