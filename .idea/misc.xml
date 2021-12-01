@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/drawable/splashscreen.xml" value="0.221875" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout-land/activity_login.xml" value="0.17416225749559083" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout-sw720dp-land/activity_login.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout-sw720dp/activity_login.xml" value="0.105859375" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/activity_forgot_password.xml" value="0.271875" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/activity_home.xml" value="0.20520833333333333" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/activity_lista_productos.xml" value="0.17147922998986828" />
@@ -19,7 +21,8 @@
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/content_home.xml" value="0.271875" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/customborder.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_gallery.xml" value="0.36666666666666664" />
-        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_home.xml" value="0.3104026845637584" />
+        <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_pro_details.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_product.xml" value="0.20208333333333334" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/fragment_slideshow.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/GrupoCincoMarketplace/app/src/main/res/layout/nav_header.xml" value="0.2" />

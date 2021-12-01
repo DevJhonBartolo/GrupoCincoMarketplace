@@ -6,14 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.squareup.picasso.Picasso
 
 
 class ProAdapter(private val dataSet: MutableList<ProEntity>,
                         private val listener: OnItemClickListener) : RecyclerView.Adapter<ProAdapter.ViewHolder>() {
 
-    val imagenes = intArrayOf(R.drawable.desengrasante,
-        R.drawable.gelantibacterial,
-        R.drawable.lavaloza)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.producto_item, parent, false)
@@ -24,21 +22,26 @@ class ProAdapter(private val dataSet: MutableList<ProEntity>,
 
         val proEn = dataSet[position]
 
-        holder.cantidad.text = proEn.cantidad
         holder.nombre.text= proEn.nombre
+        holder.cantidad.text = proEn.cantidad
+        holder.categoria.text = proEn.categoria
+        holder.vendedor.text = proEn.vendedor
         holder.precio.text = proEn.precio.toString()
+        Picasso.get().load(proEn.imagen).into(holder.imagen)
 
-        //Picasso.get().load(proEntity.imagen).into(holder.imagenItem);
+        var average = proEn.average;
 
-        holder.categoria.text = proEn.categoria;
-
-        holder.vendedor.text = proEn.vendedor;
+        if (average != null) {
+            if(average > 0){
+                holder.score.text = average.toString()
+            }else{
+                holder.score.visibility = View.INVISIBLE;
+            }
+        }
 
         //holder.scoreItem.text = proEntity.score.toString();
 
-
         //holder.imagen.setImageResource(imagenes[position])
-
         //holder.imagen.text = currentitem.imagen
     }
 
@@ -47,20 +50,23 @@ class ProAdapter(private val dataSet: MutableList<ProEntity>,
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        val cantidad :TextView = itemView.findViewById(R.id.tvcantidad)
         val nombre :TextView = itemView.findViewById(R.id.tvdescripcion)
-        val precio :TextView = itemView.findViewById(R.id.tvprecio)
+        val cantidad :TextView = itemView.findViewById(R.id.tvcantidad)
         val categoria :TextView = itemView.findViewById(R.id.tvcategoria)
         val vendedor :TextView = itemView.findViewById(R.id.tvvendedor)
-        //val imagen: ImageView =itemView.findViewById(R.id.tvimagen)
+        val precio :TextView = itemView.findViewById(R.id.tvprecio)
+        val imagen: ImageView =itemView.findViewById(R.id.tvimagen)
+        val score :TextView= itemView.findViewById<TextView>(R.id.tvscore);
+
 
         //val categoryItem:TextView = itemView.findViewById<TextView>(R.id.categoryItem);
         //val sellerItem :TextView= itemView.findViewById<TextView>(R.id.sellerItem);
-        //val scoreItem :TextView= itemView.findViewById<TextView>(R.id.scoreItem);
+
 
         init {
             itemView.setOnClickListener(this)
         }
+
         override fun onClick(v: View?) {
             if(adapterPosition != RecyclerView.NO_POSITION){
                 listener.onItemClick(adapterPosition)

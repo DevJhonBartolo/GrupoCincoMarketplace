@@ -21,4 +21,9 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_prueba">PruebaActivity</string>
     <string name="title_activity_inicio">InicioActivity</string>
+    <string name="test_search">¿Qué Buscas?</string>
+    <string name="test_All">All</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="PREFERENCE_FILE_KEY" />
 </resources>

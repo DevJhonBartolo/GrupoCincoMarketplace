@@ -25,7 +25,7 @@
             android:layout_gravity="center_vertical"/>
 
         <LinearLayout
-            android:layout_width="239dp"
+            android:layout_width="267dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:orientation="vertical">
@@ -50,19 +50,31 @@
                     android:id="@+id/tvpreciox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Precio $"
+                    android:text="Precio:"
                     android:textColor="@color/COL2"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvprecio"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="$ 799.000"
                     android:textColor="@color/COL2"
-                    android:textSize="27sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvscore"
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_baseline_star_rate_24"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
 
             </LinearLayout>
@@ -86,6 +98,7 @@
                     android:layout_height="wrap_content"
                     android:text="$ 799.000"
                     android:textSize="15sp" />
+
 
             </LinearLayout>
 
@@ -114,6 +127,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
 
 
 

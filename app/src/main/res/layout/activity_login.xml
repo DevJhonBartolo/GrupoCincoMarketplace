@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:id="@+id/loginLayout">
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -40,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/user"
+            android:text="Email"
             android:textSize="27dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -50,11 +51,12 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtUser"
+                android:id="@+id/edEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ems="15"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,7 +73,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtPassword"
+                android:id="@+id/edPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ems="15"
@@ -119,6 +121,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/googleButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

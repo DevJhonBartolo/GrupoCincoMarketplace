@@ -35,6 +35,7 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener,
     private var db = FirebaseFirestore.getInstance()
     private var listProduct = mutableListOf<ProEntity>()
     private lateinit var productAdapter: ProAdapter
+    private lateinit var svSearch: SearchView
 
 
 
@@ -59,11 +60,45 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener,
         productAdapter = ProAdapter(listProduct, this)
         recycleView.adapter = productAdapter
 
+        //Search
+        svSearch = root.findViewById<SearchView>(R.id.svSearch)
+        svSearch.setOnQueryTextListener(this)
+
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         return root
+    }
+
+    private fun searchForTitle(newText: String) {
+        listProduct.clear()
+        db.collection("productos")
+            .whereGreaterThanOrEqualTo("nombre", newText)
+            .whereLessThanOrEqualTo("nombre", (newText + "\uF7FF"))
+            .get().addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+
+                    var productExist = listProduct.find { it.id == document.id }
+
+                    if (productExist == null) {
+                        listProduct.add(
+                            ProEntity(
+                                document.data["nombre"].toString(),
+                                document.data["cantidad"].toString(),
+                                document.data["categoria"].toString(),
+                                document.data["vendedor"].toString(),
+                                document.data["precio"].toString().toInt(),
+                                document.data["imagen"].toString(),
+                                document.id
+                               // averageScore(document.id)
+                            )
+                        )
+                    }
+                }
+                productAdapter.notifyDataSetChanged();
+            }
     }
 
 
@@ -87,11 +122,12 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener,
                 if (productExist == null) {
                     listProduct.add(
                         ProEntity(
-                            document.data["cantidad"].toString(),
                             document.data["nombre"].toString(),
+                            document.data["cantidad"].toString(),
                             document.data["categoria"].toString(),
                             document.data["vendedor"].toString(),
                             document.data["precio"].toString().toInt(),
+                            document.data["imagen"].toString(),
                             document.id
                             // averageScore(document.id)
                         )
@@ -117,11 +153,18 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener,
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        TODO("Not yet implemented")
+        return true;
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
-        TODO("Not yet implemented")
+
+        if (newText!!.isEmpty()) {
+            getAllProduct()
+        } else {
+            searchForTitle(newText)
+        }
+
+        return true;
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
