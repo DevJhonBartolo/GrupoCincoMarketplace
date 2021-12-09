@@ -1,7 +1,9 @@
 package com.jhondevs.grupocincomarketplace
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
@@ -13,7 +15,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.facebook.login.LoginManager
+//import com.facebook.login.LoginManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.jhondevs.grupocincomarketplace.databinding.ActivityHomeBinding
@@ -55,7 +57,7 @@ class HomeActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_products, R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_products, R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_car
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -117,6 +119,9 @@ class HomeActivity : AppCompatActivity() {
         //}
 
         auth.signOut()
-        onBackPressed()
+        //onBackPressed()
+        startActivity(Intent(this,LoginActivity::class.java))
+        finish()
     }
+
 }

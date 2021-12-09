@@ -8,6 +8,12 @@
             android:id="@+id/nav_products"
             android:icon="@drawable/ic_baseline_clean_hands_24"
             android:title="Productos" />
+
+        <item
+            android:id="@+id/nav_car"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="Carrito de Compras" />
+
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"

@@ -33,6 +33,15 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    android {
+        buildTypes {
+            create("customDebugType") {
+                debuggable = false
+
+            }
+        }
+    }
 }
 
 dependencies {

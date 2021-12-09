@@ -188,16 +188,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun forgotPassword(view: View){
-        //startActivity(Intent(this,ForgotPasswordActivity::class.java))
+        startActivity(Intent(this,ForgotPasswordActivity::class.java))
         //startActivity(Intent(this,ListaProductosActivity::class.java))
-        startActivity(Intent(this,HomeActivity::class.java))
+
     }
 
-   /* fun register(view: View){
+    fun register(view: View){
         startActivity(Intent(this,RegisterActivity::class.java))
 
 
     }
+    /*
     fun login(view: View){
         loginUser()
 
