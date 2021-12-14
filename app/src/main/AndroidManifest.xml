@@ -16,12 +16,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        android:theme="@style/Theme.GrupoCincoMarketplace" >
         <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"  />
+            android:theme="@style/Theme.GrupoCincoMarketplace.NoActionBar"  />
         <activity
             android:name=".SplashActivity"
             android:exported="true"

@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_nav_products_to_nav_pro_details"
             app:destination="@id/nav_pro_details" />
+        <action
+            android:id="@+id/action_nav_products_to_categoriasFragment"
+            app:destination="@id/categoriasFragment" />
     </fragment>
 
     <fragment
@@ -44,4 +47,9 @@
         android:name="com.jhondevs.grupocincomarketplace.ProDetailsFragment"
         android:label="Detalle Productos"
         tools:layout="@layout/fragment_pro_details" />
+    <fragment
+        android:id="@+id/categoriasFragment"
+        android:name="com.jhondevs.grupocincomarketplace.CategoriasFragment"
+        android:label="fragment_categorias"
+        tools:layout="@layout/fragment_categorias" />
 </navigation>

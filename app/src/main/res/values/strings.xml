@@ -18,7 +18,13 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_slideshow">Mis Ordenes</string>
+    <string name="menu_compras">Mis Compras</string>
+    <string name="menu_terminos">Terminos y Condiciones</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_preguntas">Preguntas Frecuentes</string>
+    <string name="menu_categoria">Categoria</string>
+
     <string name="title_activity_prueba">PruebaActivity</string>
     <string name="title_activity_inicio">InicioActivity</string>
     <string name="test_search">¿Qué Buscas?</string>

@@ -16,29 +16,22 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
-import com.jhondevs.grupocincomarketplace.ProAdapter
-import com.jhondevs.grupocincomarketplace.ProEntity
+import com.jhondevs.grupocincomarketplace.CatAdapter
+import com.jhondevs.grupocincomarketplace.CatEntity
 import com.jhondevs.grupocincomarketplace.R
 import com.jhondevs.grupocincomarketplace.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(), SearchView.OnQueryTextListener,
-    AdapterView.OnItemSelectedListener, ProAdapter.OnItemClickListener  {
+    AdapterView.OnItemSelectedListener, CatAdapter.OnItemClickListener  {
 
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-
     private lateinit var recycleView: RecyclerView
     private var db = FirebaseFirestore.getInstance()
-    private var listProduct = mutableListOf<ProEntity>()
-    private lateinit var productAdapter: ProAdapter
-    private lateinit var svSearch: SearchView
-
-
-
+    private var listaCategorias = mutableListOf<CatEntity>()
+    private lateinit var CategoriaAdapter: CatAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,93 +45,42 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener,
         val root: View = binding.root
 
         //Recycler
-        recycleView = root.findViewById<RecyclerView>(R.id.recycler1)
+        recycleView = root.findViewById<RecyclerView>(R.id.recyclerCategoria)
         recycleView.layoutManager = LinearLayoutManager(activity)
         recycleView.setHasFixedSize(true)
 
-        getAllProduct()
-        productAdapter = ProAdapter(listProduct, this)
-        recycleView.adapter = productAdapter
+        traerCategoria()
+        CategoriaAdapter = CatAdapter(listaCategorias, this)
+        recycleView.adapter = CategoriaAdapter
 
-        //Search
-        svSearch = root.findViewById<SearchView>(R.id.svSearch)
-        svSearch.setOnQueryTextListener(this)
 
-        val textView: TextView = binding.textHome
+        val textView: TextView = binding.textCategoria
         homeViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         return root
     }
 
-    private fun searchForTitle(newText: String) {
-        listProduct.clear()
-        db.collection("productos")
-            .whereGreaterThanOrEqualTo("nombre", newText)
-            .whereLessThanOrEqualTo("nombre", (newText + "\uF7FF"))
-            .get().addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
+    private fun traerCategoria() {
+        listaCategorias.clear()
 
-                    var productExist = listProduct.find { it.id == document.id }
-
-                    if (productExist == null) {
-                        listProduct.add(
-                            ProEntity(
-                                document.data["nombre"].toString(),
-                                document.data["cantidad"].toString(),
-                                document.data["categoria"].toString(),
-                                document.data["vendedor"].toString(),
-                                document.data["precio"].toString().toInt(),
-                                document.data["imagen"].toString(),
-                                document.id
-                               // averageScore(document.id)
-                            )
-                        )
-                    }
-                }
-                productAdapter.notifyDataSetChanged();
-            }
-    }
-
-
-    private fun getAllProduct() {
-        listProduct.clear()
-
-        db.collection("productos").get().addOnSuccessListener { result ->
+        db.collection("categoria").get().addOnSuccessListener { result ->
             for (document in result) {
                 Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
 
-                //if (!listCategory.contains(document.data["category"].toString())) {
-                //    listCategory.add(document.data["category"].toString())
-                //}
+                val CategoriaExiste = listaCategorias.find { it.id == document.id }
 
-                //if (!listSeller.contains(document.data["seller"].toString())) {
-                //    listSeller.add(document.data["seller"].toString())
-                //}
-
-                val productExist = listProduct.find { it.id == document.id }
-
-                if (productExist == null) {
-                    listProduct.add(
-                        ProEntity(
+                if (CategoriaExiste == null) {
+                    listaCategorias.add(
+                        CatEntity(
                             document.data["nombre"].toString(),
-                            document.data["cantidad"].toString(),
-                            document.data["categoria"].toString(),
-                            document.data["vendedor"].toString(),
-                            document.data["precio"].toString().toInt(),
                             document.data["imagen"].toString(),
                             document.id
-                            // averageScore(document.id)
                         )
                     )
-                    // }
-
                 }
-                productAdapter.notifyDataSetChanged()
+                CategoriaAdapter.notifyDataSetChanged()
             }
-
-
 
         }
             .addOnFailureListener { exception ->
@@ -159,11 +101,8 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener,
     override fun onQueryTextChange(newText: String?): Boolean {
 
         if (newText!!.isEmpty()) {
-            getAllProduct()
-        } else {
-            searchForTitle(newText)
+            traerCategoria()
         }
-
         return true;
     }
 

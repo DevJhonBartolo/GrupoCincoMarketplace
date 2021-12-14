@@ -9,7 +9,7 @@
     android:layout_gravity="center">
 
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/text_categoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -17,28 +17,11 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:text="aqui debe salir"
+        android:text="@"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/svSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:iconifiedByDefault="false"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/search"
-            app:queryHint="@string/test_search"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
-    </LinearLayout>
-
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -49,12 +32,12 @@
         android:layout_marginTop="5dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler1"
+            android:id="@+id/recyclerCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/scrollView"
-            tools:listitem="@layout/producto_item"/>
+            tools:listitem="@layout/item_categoria"/>
     </ScrollView>
 </LinearLayout>
